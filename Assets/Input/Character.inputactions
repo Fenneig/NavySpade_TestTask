@@ -1,0 +1,45 @@
+{
+    "name": "Character",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "27f85533-7b54-4074-b7d5-d9121115e706",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "9fc8d82c-0db6-4b5a-86e1-c623975cb522",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9b172e77-b095-4bdf-be82-3777a0a51f5d",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a070c8c1-c69c-4a0c-b8c6-4cf0ad088761",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

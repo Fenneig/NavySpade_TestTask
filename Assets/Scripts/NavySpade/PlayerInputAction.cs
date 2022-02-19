@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 
 namespace NavySpade
 {
-    public class CharacterInputAction : MonoBehaviour
+    public class PlayerInputAction : MonoBehaviour
     {
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private NavMeshAgent _agent;
-        [SerializeField] private Character _character;
+        [SerializeField] private Player _player;
         
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -18,7 +18,7 @@ namespace NavySpade
 
             if (Physics.Raycast(ray, out var hit))
             {
-                _character.Move(hit.point);
+                _player.Move(hit.point);
             }
         }
     }

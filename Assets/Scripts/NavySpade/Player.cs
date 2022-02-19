@@ -1,4 +1,4 @@
-﻿using NavySpade.Components;
+﻿using NavySpade.Components.HealthBased;
 using NavySpade.Model;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,8 +7,9 @@ namespace NavySpade
 {
     public class Player : MonoBehaviour
     {
-        [Space] [Header("Specifications")] 
-        [SerializeField] private NavMeshAgent _agent;
+        [Space] [Header("Specifications")] [SerializeField]
+        private NavMeshAgent _agent;
+
         [SerializeField] private Animator _animator;
         [SerializeField] private HealthComponent _health;
 

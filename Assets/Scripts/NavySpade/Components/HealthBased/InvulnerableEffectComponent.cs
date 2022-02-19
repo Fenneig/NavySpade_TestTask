@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace NavySpade.Components
+namespace NavySpade.Components.HealthBased
 {
     public class InvulnerableEffectComponent : MonoBehaviour
     {

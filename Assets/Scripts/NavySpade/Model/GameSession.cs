@@ -9,8 +9,10 @@ namespace NavySpade.Model
     {
         [SerializeField] private PlayerData _data;
         [SerializeField] private SceneData _sceneData;
+        [SerializeField] private CrystalData _crystalData;
         public PlayerData Data => _data;
         public SceneData SceneData => _sceneData;
+        public CrystalData CrystalData => _crystalData;
 
         public static GameSession Instance;
 

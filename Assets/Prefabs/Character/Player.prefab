@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 919132149376623569}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c346d0266e34c3ea6a7de90ebc3fb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 0
+  _hp:
+    _value: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls: []

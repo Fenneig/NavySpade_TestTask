@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace NavySpade.Components
+namespace NavySpade.Components.HealthBased
 {
     public class HealthComponent : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-namespace NavySpade.Components
+namespace NavySpade.Components.Enemy
 {
     public class EnemyComponent : MonoBehaviour
     {

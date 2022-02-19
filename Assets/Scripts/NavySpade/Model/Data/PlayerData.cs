@@ -1,8 +1,8 @@
 ﻿using System;
-using NavySpade.Model.Properties;
+using NavySpade.Model.Data.Properties;
 using UnityEngine;
 
-namespace NavySpade.Model
+namespace NavySpade.Model.Data
 {
     [Serializable]
     public class PlayerData
@@ -12,6 +12,10 @@ namespace NavySpade.Model
 
         public IntProperty Hp => _hp;
 
-        public int Speed { get; set; }
+        public float Speed
+        {
+            get => _speed;
+            set => _speed = value;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using NavySpade.Model;
+using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
@@ -23,6 +25,11 @@ namespace NavySpade.Components
         private void Update()
         {
             if (!_agent.hasPath) _agent.SetDestination(GenerateNewDestination());
+        }
+
+        private void OnDestroy()
+        {
+            GameSession.Instance.SceneData.CurrentEnemiesOnScene--;
         }
     }
 }

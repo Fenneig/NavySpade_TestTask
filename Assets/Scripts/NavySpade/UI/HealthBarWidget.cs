@@ -8,7 +8,6 @@ namespace NavySpade.UI
         
         public void SetHealth(int value)
         {
-            Debug.Log("healthChanged");
             for (var i = 0; i < _hearts.Length; i++)
             {
                 _hearts[i].SetActive(false);

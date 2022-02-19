@@ -2,7 +2,7 @@
 using NavySpade.Utils;
 using UnityEngine;
 
-namespace NavySpade.Model.Properties
+namespace NavySpade.Model.Data.Properties
 {
     [Serializable]
     public class ObservableProperty<TPropertyType>

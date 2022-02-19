@@ -7,12 +7,10 @@ namespace NavySpade
 {
     public class Player : MonoBehaviour
     {
-        [Space] [Header("Specifications")] [SerializeField]
-        private NavMeshAgent _agent;
-
+        [Space] [Header("Specifications")] 
+        [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Animator _animator;
         [SerializeField] private HealthComponent _health;
-
 
         [Space] [Header("Stats")] [SerializeField]
         private int _invulnerableTime;
@@ -36,6 +34,8 @@ namespace NavySpade
 
         private void Update()
         {
+            _agent.speed = _session.Data.Speed;
+
             _agent.SetDestination(_destination);
             _animator.SetBool(IsRunning, _agent.hasPath);
         }

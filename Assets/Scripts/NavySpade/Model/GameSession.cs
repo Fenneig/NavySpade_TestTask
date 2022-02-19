@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using NavySpade.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,9 @@ namespace NavySpade.Model
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+        [SerializeField] private SceneData _sceneData;
         public PlayerData Data => _data;
+        public SceneData SceneData => _sceneData;
 
         public static GameSession Instance;
 

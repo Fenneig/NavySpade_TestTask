@@ -1,5 +1,4 @@
-﻿using System;
-using NavySpade.Model.Properties;
+﻿using NavySpade.Model.Data.Properties;
 using UnityEngine;
 using UnityEngine.Events;
 

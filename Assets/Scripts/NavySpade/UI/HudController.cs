@@ -16,5 +16,11 @@ namespace NavySpade.UI
         {
             _hpBar.SetHealth(newValue);
         }
+
+        private void OnDestroy()
+        {
+            //очень некрасиво выглядит, надо бы написать контейнер подписок который может отписываться красивее
+            GameSession.Instance.Data.Hp.Subscribe(OnHealthChanged).Dispose();
+        }
     }
 }

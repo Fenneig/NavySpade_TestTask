@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 2196632459655186103}
-  _speed: 4
+  _speed: 3
   _minX: -10
   _maxX: 10
   _minZ: -10

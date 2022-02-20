@@ -19,14 +19,6 @@ namespace NavySpade.Model.Data
             set => _speed = value;
         }
 
-        public IntProperty Score
-        {
-            get => _score;
-            set
-            {
-                _score = value;
-                if (_score.Value > PlayerPrefs.GetInt("Score")) PlayerPrefs.SetInt("Score", _score.Value);
-            }
-        }
+        public IntProperty Score => _score;
     }
 }

@@ -35,7 +35,7 @@ namespace NavySpade.Components.Enemy
 
         private void OnDestroy()
         {
-            GameSession.Instance.SceneData.CurrentEnemiesOnScene--;
+            GameSession.Instance.SceneData.CurrentEnemiesOnScene.Value--;
         }
     }
 }

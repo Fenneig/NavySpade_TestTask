@@ -20,7 +20,7 @@ namespace NavySpade.Components.Enemy
 
         private void Update()
         {
-            if (!_isSpawnInProcess && _sceneData.CurrentEnemiesOnScene < _sceneData.MaxEnemiesOnScene)
+            if (!_isSpawnInProcess && _sceneData.CurrentEnemiesOnScene.Value < _sceneData.MaxEnemiesOnScene)
             {
                 _isSpawnInProcess = true;
                 StartCoroutine(SpawnEnemy());
@@ -29,7 +29,7 @@ namespace NavySpade.Components.Enemy
 
         private IEnumerator SpawnEnemy()
         {
-            while (_sceneData.CurrentEnemiesOnScene < _sceneData.MaxEnemiesOnScene)
+            while (_sceneData.CurrentEnemiesOnScene.Value < _sceneData.MaxEnemiesOnScene)
             {
                 var randomSpawner = _spawners[Random.Range(0, _spawners.Length)];
                 randomSpawner.SpawnEnemy();

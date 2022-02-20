@@ -175,15 +175,20 @@ MonoBehaviour:
   _data:
     _hp:
       _value: 3
-    _speed: 7
+    _speed: 5
     _score:
       _value: 0
   _sceneData:
-    _maxEnemiesOnScene: 3
-    _maxCrystalsOnScene: 10
+    _maxEnemiesOnScene: 5
+    _maxCrystalsOnScene: 5
   _crystalData:
     _minScoreByCrystal: 1
     _maxScoreByCrystal: 5
+  _distanceData:
+    _nearestEnemy:
+      _value: 0
+    _nearestCrystal:
+      _value: 0
 --- !u!4 &194858790
 Transform:
   m_ObjectHideFlags: 0
@@ -197,6 +202,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &388009503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388009505}
+  - component: {fileID: 388009504}
+  m_Layer: 0
+  m_Name: DistanceCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388009504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388009503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd7a28b8ec040d0987692d7b3742c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 919132149376623570}
+--- !u!4 &388009505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388009503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &542357977
 PrefabInstance:
@@ -1062,6 +1111,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe67a1aaab0b994faf32e736f62db40, type: 3}
+--- !u!137 &2083493276 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2999475805855619418, guid: f8d48f96689422d4f9ac5f46236f9819,
+    type: 3}
+  m_PrefabInstance: {fileID: 183471556464510331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &183471556464510331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,6 +1124,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1792922939, guid: f8d48f96689422d4f9ac5f46236f9819, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 2083493276}
+    - target: {fileID: 1792922939, guid: f8d48f96689422d4f9ac5f46236f9819, type: 3}
+      propertyPath: _blinkTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 360687187382565898, guid: f8d48f96689422d4f9ac5f46236f9819,
         type: 3}
       propertyPath: m_RootOrder
@@ -1133,6 +1196,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999475805855619418, guid: f8d48f96689422d4f9ac5f46236f9819,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111834336126848604, guid: f8d48f96689422d4f9ac5f46236f9819,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: RestartMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486226996133763843, guid: f8d48f96689422d4f9ac5f46236f9819,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d48f96689422d4f9ac5f46236f9819, type: 3}

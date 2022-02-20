@@ -10,9 +10,12 @@ namespace NavySpade.Model
         [SerializeField] private PlayerData _data;
         [SerializeField] private SceneData _sceneData;
         [SerializeField] private CrystalData _crystalData;
+        [SerializeField] private DistanceData _distanceData;
         public PlayerData Data => _data;
         public SceneData SceneData => _sceneData;
         public CrystalData CrystalData => _crystalData;
+
+        public DistanceData DistanceData => _distanceData;
 
         public static GameSession Instance;
 
@@ -29,7 +32,13 @@ namespace NavySpade.Model
                 Instance = this;
             }
 
+            InitData();
             LoadHud();
+        }
+
+        private void InitData()
+        {
+            _sceneData.InitData();
         }
 
         private void LoadHud()

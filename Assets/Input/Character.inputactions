@@ -2,7 +2,7 @@
     "name": "Character",
     "maps": [
         {
-            "name": "Default",
+            "name": "default",
             "id": "27f85533-7b54-4074-b7d5-d9121115e706",
             "actions": [
                 {
@@ -18,8 +18,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9b172e77-b095-4bdf-be82-3777a0a51f5d",
-                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "id": "345dceed-9583-4af0-9034-4737d9a91e47",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -29,8 +29,8 @@
                 },
                 {
                     "name": "",
-                    "id": "a070c8c1-c69c-4a0c-b8c6-4cf0ad088761",
-                    "path": "<Mouse>/leftButton",
+                    "id": "54f2c575-49a6-4d75-bea9-0bd9c19a26aa",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

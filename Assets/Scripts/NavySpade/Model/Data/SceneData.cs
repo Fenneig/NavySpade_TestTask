@@ -1,4 +1,5 @@
 ﻿using System;
+using NavySpade.Model.Data.Properties;
 using UnityEngine;
 
 namespace NavySpade.Model.Data
@@ -11,8 +12,14 @@ namespace NavySpade.Model.Data
 
         public int MaxEnemiesOnScene => _maxEnemiesOnScene;
         public int MaxCrystalsOnScene => _maxCrystalsOnScene;
-        
-        public int CurrentEnemiesOnScene { get; set; }
-        public int CurrentCrystalsOnScene { get; set; }
+
+        public IntProperty CurrentEnemiesOnScene { get; set; }
+        public IntProperty CurrentCrystalsOnScene { get; set; }
+
+        public void InitData()
+        {
+            CurrentEnemiesOnScene = new IntProperty {Value = 0};
+            CurrentCrystalsOnScene = new IntProperty {Value = 0};
+        }
     }
 }

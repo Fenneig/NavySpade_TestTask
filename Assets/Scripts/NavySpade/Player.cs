@@ -13,9 +13,6 @@ namespace NavySpade
         [SerializeField] private Animator _animator;
         [SerializeField] private HealthComponent _health;
 
-        [Space] [Header("Stats")] [SerializeField]
-        private int _invulnerableTime;
-
         private Vector3 _destination;
         private static readonly int IsRunning = Animator.StringToHash("is-running");
 

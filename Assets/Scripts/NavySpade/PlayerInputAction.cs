@@ -9,12 +9,12 @@ namespace NavySpade
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Player _player;
-        
+
         public void OnMove(InputAction.CallbackContext context)
         {
             if (!context.started) return;
             
-            var ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            var ray = _mainCamera.ScreenPointToRay(Touchscreen.current.position.ReadValue());
 
             if (Physics.Raycast(ray, out var hit))
             {

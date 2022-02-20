@@ -13,6 +13,7 @@ namespace NavySpade.Components
         [SerializeField] private int _timeBetweenSpawn;
         [SerializeField] private int _initialSpawnCount;
         [SerializeField] private GameObject _crystalPrefab;
+        private DistanceCounterComponent _distanceCounter;
         private SceneData _sceneData;
         private bool _isSpawnInProcess;
 
@@ -21,9 +22,10 @@ namespace NavySpade.Components
         private void Start()
         {
             _sceneData = GameSession.Instance.SceneData;
-            for (int i = 0; i < _initialSpawnCount; i++)
+            _distanceCounter = FindObjectOfType<DistanceCounterComponent>();
+            for (var i = 0; i < _initialSpawnCount; i++)
             {
-                SpawnCrystal();
+                if (_sceneData.CurrentCrystalsOnScene.Value < _sceneData.MaxCrystalsOnScene) SpawnCrystal();
             }
         }
 
@@ -49,7 +51,7 @@ namespace NavySpade.Components
 
         private IEnumerator SpawnCrystalRoutine()
         {
-            while (_sceneData.CurrentCrystalsOnScene < _sceneData.MaxCrystalsOnScene)
+            while (_sceneData.CurrentCrystalsOnScene.Value < _sceneData.MaxCrystalsOnScene)
             {
                 SpawnCrystal();
                 yield return new WaitForSeconds(_timeBetweenSpawn);
@@ -62,14 +64,15 @@ namespace NavySpade.Components
         {
             if (RandomPoint(transform.position, Range, out var position))
             {
-                Instantiate(_crystalPrefab, position, Quaternion.identity);
-                _sceneData.CurrentCrystalsOnScene++;
+                var instance = Instantiate(_crystalPrefab, position, Quaternion.identity);
+                _distanceCounter.AddCrystal(instance.transform);
+                _sceneData.CurrentCrystalsOnScene.Value++;
             }
         }
 
         private void Update()
         {
-            if (!_isSpawnInProcess && _sceneData.CurrentCrystalsOnScene < _sceneData.MaxCrystalsOnScene)
+            if (!_isSpawnInProcess && _sceneData.CurrentCrystalsOnScene.Value < _sceneData.MaxCrystalsOnScene)
             {
                 _isSpawnInProcess = true;
                 StartCoroutine(SpawnCrystalRoutine());

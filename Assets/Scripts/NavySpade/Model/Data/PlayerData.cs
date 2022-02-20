@@ -9,7 +9,7 @@ namespace NavySpade.Model.Data
     {
         [SerializeField] private IntProperty _hp;
         [SerializeField] private float _speed;
-        [SerializeField] private int _score;
+        [SerializeField] private IntProperty _score;
 
         public IntProperty Hp => _hp;
 
@@ -19,13 +19,13 @@ namespace NavySpade.Model.Data
             set => _speed = value;
         }
 
-        public int Score
+        public IntProperty Score
         {
             get => _score;
             set
             {
                 _score = value;
-                if (_score > PlayerPrefs.GetInt("Score")) PlayerPrefs.SetInt("Score", _score);
+                if (_score.Value > PlayerPrefs.GetInt("Score")) PlayerPrefs.SetInt("Score", _score.Value);
             }
         }
     }

@@ -9,11 +9,17 @@ namespace NavySpade.Components.Enemy
     public class EnemyComponent : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent _agent;
-        [Space][Header("Move stats")] 
+        [SerializeField] private float _speed;
+        [Space][Header("Field size")] 
         [SerializeField] private float _minX;
         [SerializeField] private float _maxX;
         [SerializeField] private float _minZ;
         [SerializeField] private float _maxZ;
+
+        private void Start()
+        {
+            _agent.speed = _speed;
+        }
 
         private Vector3 GenerateNewDestination()
         {

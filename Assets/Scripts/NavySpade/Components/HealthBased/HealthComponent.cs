@@ -10,8 +10,6 @@ namespace NavySpade.Components.HealthBased
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
-        
-
         public int MaxHealth { get; set; }
 
         public IntProperty Hp
@@ -19,8 +17,6 @@ namespace NavySpade.Components.HealthBased
             get => _hp;
             set => _hp = value;
         }
-        
-        
 
         public bool IsInvulnerable { get; set; }
 
@@ -34,8 +30,8 @@ namespace NavySpade.Components.HealthBased
 
         public void ReceiveHeal(int amount)
         {
-            _hp.Value += amount;
-            if (_hp.Value >= MaxHealth) _hp.Value = MaxHealth;
+            if (_hp.Value + amount >= MaxHealth) _hp.Value = MaxHealth;
+            else _hp.Value += amount;
             _onHeal?.Invoke();
         }
     }

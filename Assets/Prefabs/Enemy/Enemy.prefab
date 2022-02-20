@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2196632459521349864}
   - component: {fileID: 2196632459521349871}
   - component: {fileID: 2196632459521349870}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 752096149}
   m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 2196632459655186103}
+  _speed: 4
   _minX: -10
   _maxX: 10
   _minZ: -10
@@ -272,8 +273,8 @@ GameObject:
   - component: {fileID: 3151537337208720352}
   - component: {fileID: 2196632459164592535}
   - component: {fileID: 2196632459164592534}
-  m_Layer: 10
-  m_Name: HitZone
+  m_Layer: 0
+  m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
